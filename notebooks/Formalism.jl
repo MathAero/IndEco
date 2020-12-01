@@ -37,6 +37,17 @@ demand(alice, bob) = ???
 ```
 """
 
+# ╔═╡ 85143b90-33f2-11eb-01ed-9f1d8bf48f0b
+abstract type AbstractGovt end
+
+# ╔═╡ 9c733430-33f2-11eb-28be-b95ed5d9af83
+struct Person <: AbstractGovt
+	resources :: Array{Any}
+end
+
+# ╔═╡ c4ce2ac0-33f2-11eb-2e21-c32819a5ee14
+lisa = Person(["Johnny", "Mark", "Mother" => "Breast cancer", 42])
+
 # ╔═╡ 98695ad0-33e9-11eb-2dec-65f3e590b654
 hint(text) = Markdown.MD(Markdown.Admonition("hint", "Hint", [text]));
 
@@ -52,4 +63,7 @@ hint(md"""
 # ╠═c40b3f00-33e9-11eb-3916-dff368cf3fbc
 # ╠═da9645d0-33e9-11eb-3e56-b58c1973201a
 # ╟─9419fde0-33e9-11eb-0127-c9fd0b722bb5
+# ╠═85143b90-33f2-11eb-01ed-9f1d8bf48f0b
+# ╠═9c733430-33f2-11eb-28be-b95ed5d9af83
+# ╠═c4ce2ac0-33f2-11eb-2e21-c32819a5ee14
 # ╟─98695ad0-33e9-11eb-2dec-65f3e590b654
