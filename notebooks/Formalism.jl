@@ -34,9 +34,9 @@ Let's take some notes.
 
 # ╔═╡ da9645d0-33e9-11eb-3e56-b58c1973201a
 md"""
-Sample codeblock for $Demand :: Person \times Person \to \mathbb R$.
+Sample codeblock for $Demand :: Resources \times Person \times Person \to \mathbb R$.
 ```
-demand(alice, bob) = ???
+demand(resource, alice, bob) = ???
 ```
 """
 
