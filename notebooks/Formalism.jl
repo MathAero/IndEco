@@ -4,6 +4,9 @@
 using Markdown
 using InteractiveUtils
 
+# ╔═╡ 7e2cd500-33fa-11eb-1ac1-6b41ad143658
+using PlutoUI
+
 # ╔═╡ 2a872aae-33e9-11eb-09b2-5b2f2f54d419
 md"""
 ## Individual Economics Formalism
@@ -58,6 +61,7 @@ hint(md"""
 
 # ╔═╡ Cell order:
 # ╟─2a872aae-33e9-11eb-09b2-5b2f2f54d419
+# ╠═7e2cd500-33fa-11eb-1ac1-6b41ad143658
 # ╠═847be240-33e9-11eb-3a0c-05989d6aa48e
 # ╠═a470e230-33e9-11eb-1184-11506d5c302e
 # ╠═c40b3f00-33e9-11eb-3916-dff368cf3fbc

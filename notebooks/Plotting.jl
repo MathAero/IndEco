@@ -16,9 +16,6 @@ end
 # ╔═╡ 9795c3e0-33f9-11eb-14f0-d12d158539e2
 using Plots
 
-# ╔═╡ 9d0fbe20-33f9-11eb-317c-73a28aa55480
-using PlutoUI
-
 # ╔═╡ 9fd82cf0-33f9-11eb-1bcb-afef2c71688b
 cardioid(a, t) = a * (1 - cos(t)) .* (cos(t), sin(t)) 
 
@@ -72,7 +69,6 @@ plot(dickbutt.(0:1e-3:37), label = "Economist")
 
 # ╔═╡ Cell order:
 # ╠═9795c3e0-33f9-11eb-14f0-d12d158539e2
-# ╠═9d0fbe20-33f9-11eb-317c-73a28aa55480
 # ╠═9fd82cf0-33f9-11eb-1bcb-afef2c71688b
 # ╟─ae072830-33f9-11eb-00dd-87760f6fdbbd
 # ╟─bceec510-33f9-11eb-3d94-a3d7d660dee5
