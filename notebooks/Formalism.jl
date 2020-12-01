@@ -4,21 +4,6 @@
 using Markdown
 using InteractiveUtils
 
-# This Pluto notebook uses @bind for interactivity. When running this notebook outside of Pluto, the following 'mock version' of @bind gives bound variables a default value (instead of an error).
-macro bind(def, element)
-    quote
-        local el = $(esc(element))
-        global $(esc(def)) = Core.applicable(Base.get, el) ? Base.get(el) : missing
-        el
-    end
-end
-
-# ╔═╡ 4f2e8390-33f3-11eb-3df3-17f55997a507
-using Plots
-
-# ╔═╡ 282f2ff0-33f4-11eb-08f9-fd5e0a18014e
-using PlutoUI
-
 # ╔═╡ 2a872aae-33e9-11eb-09b2-5b2f2f54d419
 md"""
 ## Individual Economics Formalism
@@ -63,52 +48,7 @@ end
 # ╔═╡ c4ce2ac0-33f2-11eb-2e21-c32819a5ee14
 lisa = Person(["Johnny", "Mark", "Mother" => "Breast cancer", 42])
 
-# ╔═╡ a9bb3560-33f3-11eb-0cac-5bc68c3727a3
-cardioid(a, t) = a * (1 - cos(t)) .* (cos(t), sin(t)) 
-
-# ╔═╡ b022f592-33f4-11eb-18a7-b3f1f2927634
-md"""
-Vary the $\theta$-slider to draw the cardioid $r = a(1 - \cos \theta),~ 0 \leq \theta \leq 2\pi,~ a = 1$.
-"""
-
-# ╔═╡ 25693220-33f4-11eb-1cfc-f5a11b764c1a
-begin
-	θ_slider = @bind θ Slider(0.:1e-3:2π)
-	md"""	
-	θ: $(θ_slider)
-	"""
-end
-
-# ╔═╡ 54510f00-33f3-11eb-0a6f-43bda39d656f
-plot(cardioid.(1, 0:1e-3:θ), label = "Cardioid")
-
-# ╔═╡ 7982f8d0-33f6-11eb-1622-8f0a675a2e41
-log_spiral(a, b, θ) = a * exp(b * θ) .* (cos(θ), sin(θ)) 
-
-# ╔═╡ 9f60ba60-33f6-11eb-3143-6daaae13f690
-φ = (1 + √5) / 2
-
-# ╔═╡ 62ba7e60-33f7-11eb-2c16-a7ebb567e712
-# Fibonacci constant
-b = log(φ) / (π/2)
-
-# ╔═╡ 029770b0-33f7-11eb-29e3-399804e0e8a4
-md"""
-Draw the Fibonacci spiral!
-"""
-
-# ╔═╡ 115342a0-33f7-11eb-3c3f-a7270bcb5282
-begin
-	t_slider = @bind t Slider(0.:1e-2:15π)
-	md"""	
-	θ: $(t_slider)
-	"""
-end
-
-# ╔═╡ bf973022-33f6-11eb-0253-bf4a9e6b6f68
-plot(log_spiral.(1, atan(b), 0:1e-3:t), label = "Fibonacci Spiral")
-
-# ╔═╡ 98695ad0-33e9-11eb-2dec-65f3e590b654
+# ╔═╡ 2180c5a2-33fa-11eb-0e6e-9db3bc0194b3
 hint(text) = Markdown.MD(Markdown.Admonition("hint", "Hint", [text]));
 
 # ╔═╡ 9419fde0-33e9-11eb-0127-c9fd0b722bb5
@@ -126,16 +66,4 @@ hint(md"""
 # ╠═85143b90-33f2-11eb-01ed-9f1d8bf48f0b
 # ╠═9c733430-33f2-11eb-28be-b95ed5d9af83
 # ╠═c4ce2ac0-33f2-11eb-2e21-c32819a5ee14
-# ╠═4f2e8390-33f3-11eb-3df3-17f55997a507
-# ╠═282f2ff0-33f4-11eb-08f9-fd5e0a18014e
-# ╠═a9bb3560-33f3-11eb-0cac-5bc68c3727a3
-# ╟─b022f592-33f4-11eb-18a7-b3f1f2927634
-# ╟─25693220-33f4-11eb-1cfc-f5a11b764c1a
-# ╟─54510f00-33f3-11eb-0a6f-43bda39d656f
-# ╠═7982f8d0-33f6-11eb-1622-8f0a675a2e41
-# ╠═9f60ba60-33f6-11eb-3143-6daaae13f690
-# ╠═62ba7e60-33f7-11eb-2c16-a7ebb567e712
-# ╟─029770b0-33f7-11eb-29e3-399804e0e8a4
-# ╟─115342a0-33f7-11eb-3c3f-a7270bcb5282
-# ╟─bf973022-33f6-11eb-0253-bf4a9e6b6f68
-# ╠═98695ad0-33e9-11eb-2dec-65f3e590b654
+# ╟─2180c5a2-33fa-11eb-0e6e-9db3bc0194b3
