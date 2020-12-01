@@ -68,7 +68,7 @@ cardioid(a, t) = a * (1 - cos(t)) .* (cos(t), sin(t))
 
 # ╔═╡ b022f592-33f4-11eb-18a7-b3f1f2927634
 md"""
-Vary the $\theta$-slider to draw the cardioid $r = a(1 - \cos \theta),~ 0 \leq \theta \leq 2\pi$.
+Vary the $\theta$-slider to draw the cardioid $r = a(1 - \cos \theta),~ 0 \leq \theta \leq 2\pi,~ a = 1$.
 """
 
 # ╔═╡ 25693220-33f4-11eb-1cfc-f5a11b764c1a
@@ -80,7 +80,33 @@ begin
 end
 
 # ╔═╡ 54510f00-33f3-11eb-0a6f-43bda39d656f
-plot(cardioid.(1, 0:1e-3:θ))
+plot(cardioid.(1, 0:1e-3:θ), label = "Cardioid")
+
+# ╔═╡ 7982f8d0-33f6-11eb-1622-8f0a675a2e41
+log_spiral(a, b, θ) = a * exp(b * θ) .* (cos(θ), sin(θ)) 
+
+# ╔═╡ 9f60ba60-33f6-11eb-3143-6daaae13f690
+φ = (1 + √5) / 2
+
+# ╔═╡ 62ba7e60-33f7-11eb-2c16-a7ebb567e712
+# Fibonacci constant
+b = log(φ) / (π/2)
+
+# ╔═╡ 029770b0-33f7-11eb-29e3-399804e0e8a4
+md"""
+Draw the Fibonacci spiral!
+"""
+
+# ╔═╡ 115342a0-33f7-11eb-3c3f-a7270bcb5282
+begin
+	t_slider = @bind t Slider(0.:1e-2:15π)
+	md"""	
+	θ: $(t_slider)
+	"""
+end
+
+# ╔═╡ bf973022-33f6-11eb-0253-bf4a9e6b6f68
+plot(log_spiral.(1, atan(b), 0:1e-3:t), label = "Fibonacci Spiral")
 
 # ╔═╡ 98695ad0-33e9-11eb-2dec-65f3e590b654
 hint(text) = Markdown.MD(Markdown.Admonition("hint", "Hint", [text]));
@@ -106,4 +132,10 @@ hint(md"""
 # ╟─b022f592-33f4-11eb-18a7-b3f1f2927634
 # ╟─25693220-33f4-11eb-1cfc-f5a11b764c1a
 # ╟─54510f00-33f3-11eb-0a6f-43bda39d656f
-# ╟─98695ad0-33e9-11eb-2dec-65f3e590b654
+# ╠═7982f8d0-33f6-11eb-1622-8f0a675a2e41
+# ╠═9f60ba60-33f6-11eb-3143-6daaae13f690
+# ╠═62ba7e60-33f7-11eb-2c16-a7ebb567e712
+# ╟─029770b0-33f7-11eb-29e3-399804e0e8a4
+# ╟─115342a0-33f7-11eb-3c3f-a7270bcb5282
+# ╟─bf973022-33f6-11eb-0253-bf4a9e6b6f68
+# ╠═98695ad0-33e9-11eb-2dec-65f3e590b654
