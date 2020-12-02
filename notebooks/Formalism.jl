@@ -36,7 +36,7 @@ Let's take some notes.
 md"""
 Sample codeblock for $Demand :: Resources \times Person \times Person \to \mathbb R$.
 ```julia
-function demand(resource, alice :: Person, bob :: Person)
+function demand(dress :: Resource, lisa :: Person, johnny :: Person)
 	???
 	Profit.
 end
